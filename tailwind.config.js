@@ -11,7 +11,7 @@ module.exports = {
         'dark': '#212121',
         'placeholder': '#7A7A7A',
         'white': '#FAFAFA',
-        'card-color': '#FFFFFF'
+        'card': '#FFFFFF'
       },
     },
   },
