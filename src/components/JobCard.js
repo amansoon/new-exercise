@@ -31,7 +31,7 @@ function JobCard({ job, index }) {
       <div className='max-w-[830px] min-h-[320px] flex px-[24px] py-[16px] bg-card rounded-[10px]'>
          <div className='flex w-full gap-[8px]'>
             <div>
-               <img src={netflixLogo} />
+               <img src={netflixLogo} alt='logo' />
             </div>
             <div className='flex flex-col'>
                <h3 className='text-[24px] text-dark'> {title}  </h3>
