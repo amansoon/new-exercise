@@ -12,24 +12,24 @@ function FormOne() {
   const [error, setError] = useState({})
 
   const handleTitle = (value) => {
-    dispatch({type: 'SET_DATA', payload: {...data, title: value}})
+    dispatch({ type: 'SET_DATA', payload: { ...data, title: value } })
   }
 
   const handleCompany = (value) => {
-    dispatch({type: 'SET_DATA', payload: {...data, company: value}})
+    dispatch({ type: 'SET_DATA', payload: { ...data, company: value } })
   }
 
   const handleIndustry = (value) => {
-    dispatch({type: 'SET_DATA', payload: {...data, industry: value}})
+    dispatch({ type: 'SET_DATA', payload: { ...data, industry: value } })
   }
 
   const handleRemoteType = (value) => {
-    dispatch({type: 'SET_DATA', payload: {...data, remoteType: value}})
+    dispatch({ type: 'SET_DATA', payload: { ...data, remoteType: value } })
   }
 
   const handleLocation = (value) => {
-    dispatch({type: 'SET_DATA', payload: {...data, location: value}})
-  
+    dispatch({ type: 'SET_DATA', payload: { ...data, location: value } })
+
   }
 
   const handleSubmit = (e) => {
@@ -47,7 +47,7 @@ function FormOne() {
     }
     else {
       setError({})
-      dispatch({type: 'SET_STEP', payload: 2})
+      dispatch({ type: 'SET_STEP', payload: 2 })
     }
 
   }
@@ -56,30 +56,30 @@ function FormOne() {
     <FormLayout title='Create a Job' step={step}>
       <form onSubmit={handleSubmit}>
 
-        <FormField>
+        <FormField marginBottom={24}>
           <Label required={true}> Job title </Label>
           <Input type={'text'} placehoder={'ex. UX designer'} value={data.title} onChange={handleTitle} />
           {error.field === 'title' && <ErrorMessage> {error.message} </ErrorMessage>}
         </FormField>
 
-        <FormField>
+        <FormField marginBottom={24}>
           <Label required={true}> Company name </Label>
           <Input type={'text'} placehoder={'ex. Google'} value={data.company} onChange={handleCompany} />
           {error.field === 'company' && <ErrorMessage> {error.message} </ErrorMessage>}
         </FormField>
 
-        <FormField>
+        <FormField marginBottom={24}>
           <Label required={true}> Industry  </Label>
           <Input type={'text'} placehoder={'ex. Information Technology '} value={data.industry} onChange={handleIndustry} />
           {error.field === 'industry' && <ErrorMessage> {error.message} </ErrorMessage>}
         </FormField>
 
         <div className='flex gap-[24px] w-full'>
-          <FormField>
+          <FormField marginBottom={96}>
             <Label> Remote type  </Label>
             <Input type={'text'} placehoder={'ex. In-office '} value={data.remoteType} onChange={handleRemoteType} />
           </FormField>
-          <FormField>
+          <FormField marginBottom={96}>
             <Label> Location  </Label>
             <Input type={'text'} placehoder={'ex. Chennai '} value={data.location} onChange={handleLocation} />
           </FormField>

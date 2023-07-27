@@ -11,7 +11,6 @@ import { useAppContext } from '../contexts/appContext'
 function FormTwo() {
   const { step, data, jobs, isEditing, dispatch } = useAppContext()
 
-
   const handleExperienceMin = (value) => {
     dispatch({ type: 'SET_DATA', payload: { ...data, experienceMin: value } })
   }
@@ -83,7 +82,7 @@ function FormTwo() {
   return (
     <FormLayout title={'Create a Job'} step={step}>
       <form onSubmit={handleSubmit}>
-        <FormField>
+        <FormField marginBottom={24}>
           <Label> Experience  </Label>
           <div className='w-full flex gap-[24px]'>
             <Input type={'text'} placehoder={'Minimum'} value={data.experienceMin} onChange={handleExperienceMin} />
@@ -91,7 +90,7 @@ function FormTwo() {
           </div>
         </FormField>
 
-        <FormField>
+        <FormField marginBottom={24}>
           <Label> Salary  </Label>
           <div className='w-full flex gap-[24px]'>
             <Input type={'text'} placehoder={'Minimum'} value={data.salaryMin} onChange={handleSalaryMin} />
@@ -99,12 +98,12 @@ function FormTwo() {
           </div>
         </FormField>
 
-        <FormField>
+        <FormField marginBottom={24}>
           <Label> Total employees  </Label>
           <Input type={'number'} placehoder={'ex. 100'} value={data.totalEmployees} onChange={handleTotalEmployees} />
         </FormField>
 
-        <FormField>
+        <FormField marginBottom={96}>
           <Label> Apply type  </Label>
           <div className='flex gap-[16px]'>
             <Radio name="apply_type" label={'Quick apply'} value='quick_apply' onChange={handleApplyType} />
