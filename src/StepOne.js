@@ -52,12 +52,6 @@ function StepOne() {
 
   }
 
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-
-
   return (
     <FormLayout title='Create a Job' step={step}>
       <form onSubmit={handleSubmit}>

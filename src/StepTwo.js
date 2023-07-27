@@ -58,7 +58,7 @@ function StepTwo() {
       }
     }
     catch (err) {
-      console.log(err)
+      // console.log(err)
     }
   }
 
@@ -69,7 +69,6 @@ function StepTwo() {
       if (res.status === 200) {
         const updatedJobs = jobs.map((job) => {
           if (job.id === res.data.id) {
-            console.log('job.id ===', 'res.data.id')
             return res.data
           }
           else {

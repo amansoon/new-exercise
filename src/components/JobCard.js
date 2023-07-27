@@ -23,12 +23,9 @@ function JobCard({ job, index }) {
             const updatedJobs = jobs.filter((job) => job.id !== res.data.id)
             dispatch({ type: 'DELETE_JOB', payload: updatedJobs })
          }
-         else {
-            console.log("Unable to delete job")
-         }
       }
       catch (err) {
-         console.log(err)
+         // console.log(err)
       }
    }
 

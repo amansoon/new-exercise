@@ -24,20 +24,11 @@ function AppProvider({ children }) {
     useEffect(() => {
         (async function () {
             const res = await getJobs()
-            console.log(res)
             if (res.status === 200) {
-                console.log('hi')
                 dispatch({type: 'SET_JOBS', payload: res.data})
-            }
-            else {
-                console.log(res.statusText)
             }
         })()
     }, [])
-
-    useEffect(() => {
-        console.log("state", state)
-    }, [state])
 
     return (
         <appContext.Provider value={{ isPopup, isEditing, step, data, jobs, dispatch}}>
