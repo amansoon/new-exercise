@@ -1,14 +1,14 @@
 import React from 'react'
-import Input from './components/Input'
-import Label from './components/Label'
-import FormField from './components/FormField'
-import Button from './components/Button'
-import FormLayout from './components/FormLayout'
-import Radio from './components/Radio'
-import { postJob, updateJob } from './mutations'
-import { useAppContext } from './contexts/appContext'
+import Input from './Input'
+import Label from './Label'
+import FormField from './FormField'
+import Button from './Button'
+import FormLayout from './FormLayout'
+import Radio from './Radio'
+import { postJob, updateJob } from '../mutations'
+import { useAppContext } from '../contexts/appContext'
 
-function StepTwo() {
+function FormTwo() {
   const { step, data, jobs, isEditing, dispatch } = useAppContext()
 
 
@@ -122,4 +122,4 @@ function StepTwo() {
   )
 }
 
-export default StepTwo
+export default FormTwo
