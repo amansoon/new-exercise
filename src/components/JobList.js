@@ -1,6 +1,4 @@
 
-
-import React from 'react'
 import JobCard from './JobCard'
 import { useAppContext } from '../contexts/appContext'
 

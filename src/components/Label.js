@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 function Label({ children, required }) {
   return (
     <label htmlFor="" className='text-[14px] font-medium'>

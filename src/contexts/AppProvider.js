@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react"
+import { useEffect, useReducer } from "react"
 import { appContext } from "./appContext"
 import { getJobs } from "../mutations"
 import reducer from './reducer'
@@ -11,11 +11,6 @@ const initialState = {
     jobs: [],
     data: null,
 }
-
-const initialFormData = {
-    
-}
-
 
 function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState)

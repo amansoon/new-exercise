@@ -1,6 +1,4 @@
 
-import React from 'react'
-
 function Radio({ name, label, value, onChange }) {
     return (
         <div className='flex gap-[4px]'>

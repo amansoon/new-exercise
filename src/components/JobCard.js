@@ -1,6 +1,4 @@
 
-
-import React from 'react'
 import netflixLogo from '../assets/netflixLogo.svg'
 import Button from './Button'
 import EditIcon from '../icons/EditIcon'

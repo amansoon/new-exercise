@@ -1,7 +1,5 @@
 
 
-import React from 'react'
-
 function FormTitle({step, children}) {
     return (
         <div className='font-medium flex justify-between mb-[24px]'>
