@@ -50,11 +50,7 @@ function StepTwo() {
     try {
       const res = await postJob(data)
       if (res.status === 201) {
-        alert('New Job posted successfully')
         dispatch({ type: 'ADD_JOB', payload: [...jobs, res.data] })
-      }
-      else {
-        alert(res.statusText)
       }
     }
     catch (err) {
