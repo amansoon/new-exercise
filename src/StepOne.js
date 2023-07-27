@@ -4,42 +4,32 @@ import Label from './components/Label'
 import FormField from './components/FormField'
 import Button from './components/Button'
 import FormLayout from './components/FormLayout'
-import { useFormContext } from './contexts/formContext'
 import ErrorMessage from './components/ErrorMessage'
-
-
-const initialErrors = {
-  title: null,
-  company: null,
-  industry: null,
-  remoteType: null,
-  location: null,
-}
-
+import { useAppContext } from './contexts/appContext'
 
 function StepOne() {
-  const { step, setStep, data, setData } = useFormContext()
-
+  const { step, data, dispatch } = useAppContext()
   const [error, setError] = useState({})
 
   const handleTitle = (value) => {
-    setData({ ...data, title: value })
+    dispatch({type: 'SET_DATA', payload: {...data, title: value}})
   }
 
   const handleCompany = (value) => {
-    setData({ ...data, company: value })
+    dispatch({type: 'SET_DATA', payload: {...data, company: value}})
   }
 
   const handleIndustry = (value) => {
-    setData({ ...data, industry: value })
+    dispatch({type: 'SET_DATA', payload: {...data, industry: value}})
   }
 
   const handleRemoteType = (value) => {
-    setData({ ...data, remoteType: value })
+    dispatch({type: 'SET_DATA', payload: {...data, remoteType: value}})
   }
 
   const handleLocation = (value) => {
-    setData({ ...data, location: value })
+    dispatch({type: 'SET_DATA', payload: {...data, location: value}})
+  
   }
 
   const handleSubmit = (e) => {
@@ -57,11 +47,10 @@ function StepOne() {
     }
     else {
       setError({})
-      setStep(2)
+      dispatch({type: 'SET_STEP', payload: 2})
     }
 
   }
-
 
 
   useEffect(() => {
@@ -81,24 +70,24 @@ function StepOne() {
 
         <FormField>
           <Label required={true}> Company name </Label>
-          <Input type={'text'} placehoder={'ex. Google'} onChange={handleCompany} />
+          <Input type={'text'} placehoder={'ex. Google'} value={data.company} onChange={handleCompany} />
           {error.field === 'company' && <ErrorMessage> {error.message} </ErrorMessage>}
         </FormField>
 
         <FormField>
           <Label required={true}> Industry  </Label>
-          <Input type={'text'} placehoder={'ex. Information Technology '} onChange={handleIndustry} />
+          <Input type={'text'} placehoder={'ex. Information Technology '} value={data.industry} onChange={handleIndustry} />
           {error.field === 'industry' && <ErrorMessage> {error.message} </ErrorMessage>}
         </FormField>
 
         <div className='flex gap-[24px] w-full'>
           <FormField>
             <Label> Remote type  </Label>
-            <Input type={'text'} placehoder={'ex. In-office '} onChange={handleRemoteType} />
+            <Input type={'text'} placehoder={'ex. In-office '} value={data.remoteType} onChange={handleRemoteType} />
           </FormField>
           <FormField>
             <Label> Location  </Label>
-            <Input type={'text'} placehoder={'ex. Chennai '} onChange={handleLocation} />
+            <Input type={'text'} placehoder={'ex. Chennai '} value={data.location} onChange={handleLocation} />
           </FormField>
         </div>
 

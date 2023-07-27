@@ -2,14 +2,16 @@
 
 import React from 'react'
 import JobCard from './JobCard'
+import { useAppContext } from '../contexts/appContext'
+
 
 function JobList() {
-  const jobs = [1, 2, 3, 4]
+  const { jobs } = useAppContext()
   return (
     <div className='grid grid-cols-2 gap-6'>
-        {jobs.map((job, index) => {
-           return <JobCard key={index} />
-        })}
+      {jobs.map((job, index) => {
+        return <JobCard job={job} index={index} key={job.id} />
+      })}
     </div>
   )
 }

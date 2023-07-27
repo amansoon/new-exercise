@@ -1,18 +1,16 @@
-import { useState } from "react"
-import StepOne from "./StepOne"
-import StepTwo from "./StepTwo"
 import Button from "./components/Button"
-import JobCard from "./components/JobCard"
 import JobList from "./components/JobList"
 import CreateJob from './components/CreateJob'
+import { useAppContext } from "./contexts/appContext"
 
 function App() {
-  const [isPopup, setIsPopup] = useState(false)
-  
-  return <div className="p-6">
-    <Button type='primary' onClick={() => setIsPopup(true)} > Create a Job </Button>
+  const { isPopup, dispatch } = useAppContext()
+
+  return <div className={`p-6 ${isPopup && 'h-[100vh] overflow-hidden'}`}>
+    <Button type='primary' onClick={() => dispatch({type: 'CREATING_JOB'}) } > Create a Job </Button>
     <br />
-    {isPopup ? <CreateJob /> : <JobList />}
+    {isPopup && <CreateJob />}
+    <JobList />
   </div>
 }
 
