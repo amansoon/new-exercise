@@ -7,7 +7,7 @@ function App() {
   const { isPopup, dispatch } = useAppContext()
 
   return <div className={`p-6 ${isPopup && 'h-[100vh] overflow-hidden'}`}>
-    <Button type='primary' onClick={() => dispatch({type: 'CREATING_JOB'}) } > Create a Job </Button>
+    <Button type='primary' onClick={() => dispatch({ type: 'CREATING_JOB' })} > Create a Job </Button>
     <br />
     {isPopup && <CreateJob />}
     <JobList />

@@ -1,14 +1,13 @@
-import React, {useRef} from 'react'
+import React, { useRef } from 'react'
 import useOutsideClick from '../hooks/useOutsideClick'
 import { useAppContext } from '../contexts/appContext'
 
 function FormLayout({ children, title, step }) {
-    const {dispatch} = useAppContext()
+    const { dispatch } = useAppContext()
     const ref = useRef()
 
-    useOutsideClick(ref, ()=> {
-        console.log("clicked outside")
-       dispatch({type: 'CLOSE_POPUP'})
+    useOutsideClick(ref, () => {
+        dispatch({ type: 'CLOSE_POPUP' })
     })
 
     return (

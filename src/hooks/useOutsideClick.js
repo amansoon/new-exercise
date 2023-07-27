@@ -8,12 +8,14 @@ const useOutsideClick = (ref, callback) => {
     };
 
     useEffect(() => {
-        document.addEventListener("click", handleClick);
+        setTimeout(() => {
+            document.addEventListener("click", handleClick);
+        }, 100);
 
         return () => {
             document.removeEventListener("click", handleClick);
         };
-    }, [ref]);
+    }, []);
 };
 
 export default useOutsideClick
